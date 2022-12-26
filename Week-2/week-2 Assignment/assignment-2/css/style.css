@@ -1,0 +1,61 @@
+
+.main{
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.main:hover >div > div {
+  transition: all 1s linear;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg)
+}
+.main:hover > div > .div1{
+  transform-origin: top left;
+}
+.main:hover > div > .div2{
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+.main:hover > div > .div3{
+  transform-origin: top right;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+.main:hover > div > .div4{
+  transform-origin: bottom right;
+}
+
+.div1,.div2,.div3,.div4{
+    height: 100px;
+    width: 100px;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+p{
+  z-index: -1;
+}
+.div1{
+  background-color: red;
+}
+.div2{
+  background-color: blue;
+}
+.div3{
+  background-color: yellow;
+}
+.div4{
+  background-color: green;
+}

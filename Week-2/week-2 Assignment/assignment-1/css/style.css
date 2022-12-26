@@ -1,0 +1,79 @@
+/* Header Section styles */
+.header-section{
+    display: flex;
+    justify-content: center;
+}
+.header-section > p{
+    font-weight: 400;
+}
+
+
+/* mid section Styles */
+.mid-section{
+    display: flex;
+}
+.mid-section-common{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+img{
+    margin-top: 3em;
+    height: 20em;
+    width: 20em;
+}
+.mid-section-1{
+    flex: 50%;
+}
+.mid-section-2{
+    flex: 50%;
+}
+/* Footer section Styles */
+.footer-section{
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/* Form styles  */
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+}
+
+input [type="email"],[type="text"],[type="tel"],[type="password"],[type="email"]{
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    height: 2em;
+}
+select{
+    height: 2em;
+}
+
+button{
+    height: 2em;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+
+/* For mobile Devices dimensions */
+@media only screen and (max-width: 700px) {
+    .mid-section{
+        flex-direction: column;
+    }
+    .mid-section-2 > article{
+        margin-top: 2em;
+    }
+}
