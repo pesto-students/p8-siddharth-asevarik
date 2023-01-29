@@ -1,0 +1,14 @@
+{
+  "name": "testing_with_jest",
+  "version": "1.0.0",
+  "description": "something_with_jest",
+  "main": "assignment-1.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.4.1"
+  }
+}

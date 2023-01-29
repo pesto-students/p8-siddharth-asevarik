@@ -1,0 +1,14 @@
+{
+  "name": "testwithjest",
+  "version": "1.0.0",
+  "description": "testing jest framework",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Abhishek Sevarik",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.3.1"
+  }
+}
