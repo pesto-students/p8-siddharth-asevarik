@@ -1,0 +1,29 @@
+@import "constants";
+
+.taskBoard{
+    grid-column: $grid-container-full-space-occupy;
+    margin-left: $margin-left-todocontainer;
+    margin-right: $margin-left-todocontainer;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax($card_width,auto);
+    gap: 10px;
+    align-self: center;
+}
+// L
+@media screen and (min-width:1200px) {
+    .taskBoard{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+@media screen and (max-width:980px) {
+    .taskBoard{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:680px) {
+    .taskBoard{
+        grid-template-columns: repeat(1,1fr);
+
+    }
+}
