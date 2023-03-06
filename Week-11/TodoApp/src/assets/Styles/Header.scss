@@ -1,0 +1,28 @@
+@import 'constants';
+.header{
+    margin-top:$margin-top-todocontainer;
+    margin-left: $margin-left-todocontainer;
+    grid-column: $grid-container-full-space-occupy;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    svg{
+        font-size: 30px;
+        color: $light_grey;
+    }
+    input{
+        border: none;
+        font-size: larger;
+        width: 50%;
+    }
+
+    button{
+        border: none;
+        background-color: $light_grey;
+        border-radius: 30px;
+        width: 100px;
+    }
+    button:hover{
+        background-color: $sky_blue;
+    }
+}

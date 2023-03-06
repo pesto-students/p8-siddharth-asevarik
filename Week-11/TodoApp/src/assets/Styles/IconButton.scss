@@ -1,0 +1,11 @@
+@import "constants";
+.icon-button{
+    display: flex;
+    height: 40px;
+    width:40px;
+    background-color: $secondary;
+    border-radius: 30px;
+    color: $primary;
+    align-items: center;
+    justify-content: center;
+}

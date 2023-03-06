@@ -1,0 +1,14 @@
+{
+  "name": "week_seven",
+  "version": "1.0.0",
+  "description": "access inbuilt data structures",
+  "main": "assignment-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "buckets-js": "^1.98.2"
+  }
+}

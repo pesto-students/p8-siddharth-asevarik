@@ -1,0 +1,52 @@
+$primary :#ffff;
+$secondary:#000000;
+$light_grey:#D9D9D9;
+$dark_grey:#404040DE;
+
+// Colors
+$colors:(
+"primary":$primary,
+"light_orange":#EF9B1D82,
+"light_red":#E59669D9,
+"light_green":#C5E7658A,
+"light_purple":#C594D7D9,
+"lemon_yellow":#EDFDAE,
+"sky_blue":#A4DAEB,
+);
+
+// variables
+$light_orange:#EF9B1D82;
+$light_red:#E59669D9;
+$light_green:#C5E7658A;
+$light_purple:#C594D7D9;
+$lemon_yellow:#EDFDAE;
+$sky_blue:#A4DAEB;
+$btn_green_color:#00CA00;
+//star_color:
+$yellow:#FEC90D;
+$red_color:#fb0066;
+
+//MARK: common properties:
+$margin-left-todocontainer:5%;
+$margin-top-todocontainer:5%;
+$grid-container-full-space-occupy:2/3;
+$card_height: 275px;
+$card_width: 290px;
+$border_radius:25px;
+
+
+
+
+
+// common borders input stylings
+textarea:focus, input:focus{
+    outline: none;
+}
+
+// colors of tasks card
+@each $key,$val in $colors{
+    .#{$key}{
+        background-color: $val;
+    }
+}
+
