@@ -1,0 +1,16 @@
+@import 'constants';
+.sidebar{
+    border-right: 1px solid;
+    border-color: $light_grey;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+// responsive code
+@media screen and (max-width :980px) {
+    .sidebar{
+        display: none;
+    }
+}

@@ -1,0 +1,5 @@
+url-shortner-app deployement details
+deployement-service:-vercel
+Linked to asevarik-gmailcom/url-shortner-app
+🔍  Inspect: https://vercel.com/asevarik-gmailcom/url-shortner-app/EcfE8brmTbA44y1QCwipeKUVpikd [2s]
+✅  Production: https://url-shortner-app-delta.vercel.app 
