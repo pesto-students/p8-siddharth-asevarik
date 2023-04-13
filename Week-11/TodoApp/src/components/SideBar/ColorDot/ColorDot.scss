@@ -1,0 +1,18 @@
+@import "../../common/constants";
+
+.color-dot-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+@each $key,$value in $colors{
+    .color-dot-#{$key}{
+        height: 18px;
+        width: 18px;
+        border-radius: 30px;
+        background-color: $value;
+    }
+}
+

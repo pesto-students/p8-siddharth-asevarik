@@ -1,0 +1,47 @@
+@import "../common/constants";
+
+.modalBackground{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    position: fixed;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalContainer{
+    height: 400px;
+    width:400px;
+    border-radius: $border_radius;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);  
+    textarea{
+        grid-column: 1/4;
+        grid-row: 1/3;
+    } 
+
+}
+button{
+    border: none;
+    height: 50px;
+    width: 100px;
+    border-radius: $border_radius;
+    color: white;
+    background-color: $red_color;
+}
+button:nth-child(even){
+background-color: $btn_green_color;
+}
+textarea{
+    border: none;
+    background-color: transparent;
+    margin: 20px;
+    resize: none;
+}
+.modal-footer-section{
+   grid-column: 1/4;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
