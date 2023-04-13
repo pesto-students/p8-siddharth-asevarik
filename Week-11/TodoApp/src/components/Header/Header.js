@@ -1,7 +1,8 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../assets/Styles/Header.scss"
-export const Header = ({onSearchClick})=>{
+import PropTypes from "prop-types";
+import "./Header.scss"
+const Header = ({onSearchClick})=>{
 
     return (
         <header className="header">
@@ -11,3 +12,7 @@ export const Header = ({onSearchClick})=>{
         </header>
     );
 }
+Header.propTypes = {
+    onSearchClick:PropTypes.func
+}
+export default Header;

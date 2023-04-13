@@ -1,39 +1,39 @@
 import { faPen, faStar } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "../assets/Styles/TaskCard.scss"
-import { IconButton } from "../Utils/IconButton";
+import "./TaskCard.scss"
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Button } from "@mui/material";
-import { completedTodo, deleteTodo, updateTodo } from "../reducers/actions/todoActions";
+import { completedTodo, deleteTodo, updateTodo } from "../../reducers/actions/todoActions";
 import * as moment from 'moment';
+import { IconButton } from "../common";
+import PropTypes from "prop-types";
 const TaskCard = ({ task }) => {
     const selector = useSelector(state => state.changeTodoActionReducer)
     const [openDorpDown, setOpenDropDown] = useState({isOpen:false,anchorEl:null});
     const [isTodoEditable,setisTodoEditable] = useState(false);
     const dispatch = useDispatch();
     const textarearef = useRef(null);
-    function openDropDownMenu(event) {
+    function handleopenDropDownMenu(event) {
         setOpenDropDown({isOpen:true,anchorEl:event.currentTarget});
     }
-    function closeDropDownMenu() {
+    function handlecloseDropDownMenu() {
         setOpenDropDown({isOpen:false,anchorEl:null});
     }
     function handleMarkAsCompleted(){
         dispatch(completedTodo(task.id));
-        closeDropDownMenu()
+        handlecloseDropDownMenu()
     }
     function handleDeleteTodo() {
         dispatch(deleteTodo(task.id));
-        closeDropDownMenu();
+        handlecloseDropDownMenu();
     }
     function handleEditTodo(){
         setisTodoEditable(true);
-        closeDropDownMenu()
+        handlecloseDropDownMenu()
         console.log("edit functionality")
     }
-    function onfinishedEditing(){
+    function handleOnFinishedEditing(){
         if(isTodoEditable){
             //TODO: save task to DB
             console.log("current task", task);
@@ -46,21 +46,20 @@ const TaskCard = ({ task }) => {
         }
     }
     return (
-        
         <div className={"task-card " + task.taskbgColor}>
-            <textarea ref = {textarearef}readOnly={!isTodoEditable} onBlur={onfinishedEditing} className={task.completed && "completed"}>{task.description}
+            <textarea ref = {textarearef} readOnly={!isTodoEditable} onBlur={handleOnFinishedEditing} className={task.completed && "completed"}>{task.description}
             </textarea>
             <IconButton className={"fav-btn"} icon={faStar} onButtonClick={() => {
                 console.log(selector);
                 console.log("favorite button pressed")
             }} />
             <footer> {moment(task.id).format('MMMM d, YYYY')}
-                <IconButton icon={faPen} onButtonClick={openDropDownMenu} />
+                <IconButton icon={faPen} onButtonClick={handleopenDropDownMenu} />
                 <Menu
                     id="basic-menu"
                     anchorEl={openDorpDown.anchorEl}
                     open={openDorpDown.isOpen}
-                    onClose={closeDropDownMenu}
+                    onClose={handlecloseDropDownMenu}
                 >
                     <MenuItem onClick={handleEditTodo} disabled={task.completed}>Edit</MenuItem>
                     <MenuItem onClick={handleDeleteTodo}>Delete</MenuItem>
@@ -69,5 +68,13 @@ const TaskCard = ({ task }) => {
             </footer>
         </div>
     )
+}
+TaskCard.propsTypes={
+    task:PropTypes.shape({
+        id:PropTypes.any,
+        description:PropTypes.string,
+        completed:PropTypes.bool,
+        taskbgColor:PropTypes.string,
+    })
 }
 export default TaskCard;

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "../assets/Styles/Modal.scss"
+import "./Modal.scss"
 
 
 const Modal = ({bgColor="",onSave,onDiscard})=>{

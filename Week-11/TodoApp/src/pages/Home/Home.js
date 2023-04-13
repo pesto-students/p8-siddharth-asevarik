@@ -1,25 +1,21 @@
-import TaskCard from "./components/TaskCard";
-import './assets/Styles/App.scss'
-import { Sidebar } from "./components/SideBar/Sidebar";
-import { Header } from "./components/Header";
-import { TasksBoard } from "./components/TasksBoard";
-import { useState } from "react";
-import { colors } from "./Utils/constants";
-import Modal from "./components/Modal";
+import './App.scss'
+import { Sidebar,Header,TasksBoard,Modal } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "./reducers/actions/todoActions";
-function App() {
+import { colors } from "../../Utils/constants";
+import { useState } from "react";
+import { addTodo } from "../../reducers/actions/todoActions";
+const Home = () => {
+  const dispatch = useDispatch();  
   const[ismodalOpen,setisModalOpen] = useState({status:false,color:"sky_blue"})
   const selector = useSelector(state=>state.changeTodoActionReducer);
-  const dispatch = useDispatch();  
   
   function handleModalOpen(id) {
       setisModalOpen({status:!ismodalOpen.status,color:colors[id]})
       }
-    function modalHandleOnDiscard(){
+    function handleModalOnDiscard(){
       setisModalOpen({status:!ismodalOpen.status,color:""});
     }
-    function modalHandleOnSave(taskDescription){
+    function handleModalOnSave(taskDescription){
       console.log("save button "+taskDescription);
       dispatch(addTodo({
         id:Date.now(),
@@ -27,12 +23,13 @@ function App() {
         completed:false,
         taskbgColor:ismodalOpen.color,
       }))
-      modalHandleOnDiscard()
+      handleModalOnDiscard()
     }
+    console.log("haskafsdj;afldafkj")
   return (
     <div className="container">
       <Sidebar handleDotClick={handleModalOpen}/>
-      {ismodalOpen.status && <Modal bgColor={ismodalOpen.color} onDiscard={modalHandleOnDiscard} onSave={modalHandleOnSave}/>}
+      {ismodalOpen.status && <Modal bgColor={ismodalOpen.color} onDiscard={handleModalOnDiscard} onSave={handleModalOnSave}/>}
       <div className="todoContainer">
         <Header onSearchClick={()=>console.log("search button tapped")}/>
         <h1>NOTES</h1>
@@ -42,4 +39,5 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
+  

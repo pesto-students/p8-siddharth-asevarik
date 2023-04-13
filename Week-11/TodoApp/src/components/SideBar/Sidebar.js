@@ -1,13 +1,14 @@
-import { IconButton } from "../../Utils/IconButton";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
-import { ColorDot } from "./ColorDot";
-import "../../assets/Styles/SideBar.scss"
+import "./SideBar.scss"
 import { useState } from "react";
-export const Sidebar = ({handleDotClick})=>{
+import ColorDot from "./ColorDot";
+import { IconButton } from "../common";
+import  PropTypes  from "prop-types";
+const  Sidebar = ({handleDotClick})=>{
   const [isColorDotVisible,setColorDotVisible] = useState(false);
 
   return (  <div className="sidebar">
-        <h3>Docket</h3>
+        <h3>Notes</h3>
         <IconButton icon={faAdd} onButtonClick={()=>{
           setColorDotVisible(!isColorDotVisible);
         }}/>
@@ -15,3 +16,7 @@ export const Sidebar = ({handleDotClick})=>{
       </div>
   );
 }
+Sidebar.propTypes = {
+  handleDotClick:PropTypes.func
+}
+export default Sidebar;
